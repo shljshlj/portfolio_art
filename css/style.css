@@ -1,17 +1,37 @@
+/* Reset */
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+body, html {
+  margin: 0;
+  height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-size: inherit;
-    font-weight: inherit;
+  margin: unset;
+  font-size: unset;
+  font-weight: unset;
 }
+
+ul, li {
+  list-style-type: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* General */
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+}
+
+/* Heading */
+/* Main navigation */
+
+/*# sourceMappingURL=style.css.map */

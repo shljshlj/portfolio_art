@@ -1,0 +1,42 @@
+$font-primary: 'Open Sans', sans-serif;
+$font-heading: 'Khula', sans-serif;
+
+/* Reset */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: unset;
+    font-size: unset;
+    font-weight: unset;
+}
+
+ul, li {
+    list-style-type: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* General */
+
+body {
+    font-family: $font-primary;
+    font-size: 14px;
+}
+
+/* Heading */
+
+/* Main navigation */
+
