@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body, html {
   margin: 0;
   height: 100%;
@@ -28,10 +32,118 @@ a {
 /* General */
 body {
   font-family: "Open Sans", sans-serif;
-  font-size: 14px;
+  font-size: 1.6rem;
+  background-color: #f1f1f1;
 }
 
-/* Heading */
+@media (min-width: 678px) {
+  body {
+    font-size: 1.4rem;
+  }
+}
+/* ////////////////////////// */
+/* Header */
+.header {
+  display: flex;
+  flex-direction: column;
+  font-family: "Khula", sans-serif;
+  background-color: #fff;
+}
+
+.header__title {
+  margin-top: 6rem;
+  padding: 1.2rem 0;
+  text-align: center;
+  font-size: 3rem;
+}
+
 /* Main navigation */
+.header__menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header__menu {
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+  transform: translateY(-130%);
+  transition: all 0.5s cubic-bezier(0.23, 0.96, 0.58, 1);
+}
+
+.menu__item {
+  padding: 1.2rem 0;
+  text-align: center;
+  border-bottom: 1px solid #000;
+}
+.menu__item:last-child {
+  border-bottom: none;
+}
+
+/* Label */
+.nav__label {
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #292929;
+}
+
+.label__icon-box {
+  cursor: pointer;
+  display: block;
+  width: 60px;
+  height: 48px;
+  padding: 17px;
+}
+
+.label__icon {
+  display: block;
+  margin: 6px 0;
+  width: 25px;
+  border-top: 2px solid #292929;
+  border-radius: 1000px;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.label__icon::before,
+.label__icon::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  border-top: 2px solid #292929;
+  border-radius: 1000px;
+  transition: all 0.3s;
+  display: block;
+}
+
+.label__icon::before {
+  top: -8px;
+}
+
+.label__icon::after {
+  top: 4px;
+}
+
+.header__nav--expanded .header__menu {
+  visibility: visible;
+  transform: translateY(0);
+}
+.header__nav--expanded .label__icon {
+  border-color: transparent;
+}
+.header__nav--expanded .label__icon::before,
+.header__nav--expanded .label__icon::after {
+  top: -2px;
+  border-top-width: 2.4px;
+}
+.header__nav--expanded .label__icon::before {
+  transform: rotate(45deg) scaleX(1.15);
+}
+.header__nav--expanded .label__icon::after {
+  transform: rotate(-45deg) scaleX(1.15);
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -1,5 +1,8 @@
 $font-primary: 'Open Sans', sans-serif;
-$font-heading: 'Khula', sans-serif;
+$font-secondary: 'Khula', sans-serif;
+
+$b_mobile: 678px;
+$b_desktop: 1200px;
 
 /* Reset */
 
@@ -7,6 +10,10 @@ $font-heading: 'Khula', sans-serif;
 *::before,
 *::after {
     box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
 }
 
 body, html {
@@ -33,10 +40,131 @@ a {
 
 body {
     font-family: $font-primary;
-    font-size: 14px;
+    font-size: 1.6rem;
+    background-color: rgb(241, 241, 241);
 }
 
-/* Heading */
+@media (min-width: $b_mobile) {
+    body {
+        font-size: 1.4rem;
+    }
+}
+
+/* ////////////////////////// */
+
+/* Header */
+
+.header {
+    display: flex;
+    flex-direction: column;
+    font-family: $font-secondary;
+    background-color: #fff;
+}
+
+.header__title {
+    margin-top: 6rem;
+    padding: 1.2rem 0;
+    text-align: center;
+    font-size: 3rem;
+}
 
 /* Main navigation */
 
+%menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header__menu {
+    @extend %menu;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    transform: translateY(-130%);
+    transition: all .5s cubic-bezier(.23,.96,.58,1);
+}
+
+.menu__item {
+    padding: 1.2rem 0;
+    text-align: center;
+    border-bottom: 1px solid #000;
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Label */
+
+.nav__label {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #292929;
+
+}
+
+.label__icon-box {
+  cursor: pointer;
+  display: block;
+  width: 60px;
+  height: 48px;
+  padding: 17px;
+}
+
+.label__icon {
+  display: block;
+  margin: 6px 0;
+  width: 25px;
+  border-top: 2px solid #292929;
+  border-radius: 1000px;
+  position: relative;
+  transition: all .3s;
+}
+
+.label__icon::before,
+.label__icon::after {
+  content: '';
+  width: 100%;
+  position: absolute;
+  border-top: 2px solid #292929;
+  border-radius: 1000px;
+  transition: all .3s;
+  display: block;
+}
+
+.label__icon::before {
+  top: -8px;
+}
+
+.label__icon::after {
+  top: 4px;
+}
+
+.header__nav--expanded {
+
+    .header__menu {
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .label__icon {
+        border-color: transparent;
+    }
+
+    .label__icon::before,
+    .label__icon::after {
+        top: -2px;
+        border-top-width: 2.4px;
+    }
+
+    .label__icon::before {
+        transform: rotate(45deg) scaleX(1.15);
+    }
+
+    .label__icon::after {
+        transform: rotate(-45deg) scaleX(1.15);
+    }
+}
