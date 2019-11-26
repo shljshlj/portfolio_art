@@ -29,6 +29,8 @@ h1, h2, h3, h4, h5, h6 {
 
 ul, li {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 a {
@@ -73,22 +75,19 @@ body {
 // TODO: make navigation animation work
 
 .header__nav__container {
-    display: none;
-}
-
-%menu {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    // display: none;
+    overflow: hidden;
 }
 
 .header__menu {
-    @extend %menu;
     display: flex;
     flex-direction: column;
 
-    transform: translateY(-130%);
-    transition: transform .5s cubic-bezier(.23,.96,.58,1);
+    // transform: translateY(-130%);
+    // transition: transform .5s cubic-bezier(.23,.96,.58,1);
+
+    margin-top: -200%;
+    transition: margin-top .4s ease-in-out;
 }
 
 .menu__item {
@@ -127,7 +126,7 @@ body {
   border-top: 2px solid #292929;
   border-radius: 1000px;
   position: relative;
-  transition: all .3s;
+  transition: all .4s;
 }
 
 .label__icon::before,
@@ -137,7 +136,7 @@ body {
   position: absolute;
   border-top: 2px solid #292929;
   border-radius: 1000px;
-  transition: all .3s;
+  transition: all .4s;
   display: block;
 }
 
@@ -152,11 +151,12 @@ body {
 .header__nav--expanded {
 
     .header__nav__container {
-        display: block;
+        // display: block;
     }
 
     .header__menu {
-        transform: translateY(0);
+        // transform: translateY(0);
+        margin-top: 0;
     }
 
     .label__icon {
