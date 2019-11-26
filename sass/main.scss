@@ -70,6 +70,12 @@ body {
 
 /* Main navigation */
 
+// TODO: make navigation animation work
+
+.header__nav__container {
+    display: none;
+}
+
 %menu {
     list-style-type: none;
     margin: 0;
@@ -80,9 +86,9 @@ body {
     @extend %menu;
     display: flex;
     flex-direction: column;
-    visibility: hidden;
+
     transform: translateY(-130%);
-    transition: all .5s cubic-bezier(.23,.96,.58,1);
+    transition: transform .5s cubic-bezier(.23,.96,.58,1);
 }
 
 .menu__item {
@@ -145,8 +151,11 @@ body {
 
 .header__nav--expanded {
 
+    .header__nav__container {
+        display: block;
+    }
+
     .header__menu {
-        visibility: visible;
         transform: translateY(0);
     }
 
