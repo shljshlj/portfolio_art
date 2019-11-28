@@ -22,7 +22,7 @@ html {
 
 body, html {
     margin: 0;
-    height: 100%;
+    min-height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -43,12 +43,21 @@ a {
     cursor: pointer;
 }
 
+figure {
+    margin: 0;
+}
+
 /* General */
 
 body {
     font-family: $font-primary;
     font-size: 1.6rem;
     background-color: rgb(241, 241, 241);
+}
+
+.site-container {
+    max-width: 960px;
+    margin: 0 auto;
 }
 
 @media (min-width: $b_tablet) {
@@ -103,6 +112,10 @@ body {
 
     &:last-child {
         border-bottom: none;
+    }
+
+    &--active {
+        color: #666;
     }
 }
 
@@ -200,4 +213,60 @@ body {
         flex-direction: row;
         justify-content: center;
     }
+}
+
+/* Main */
+
+.main {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 140px;
+}
+
+/* Images */
+
+.image--single {
+    padding: 5px;
+}
+
+.image__caption {
+    font-size: 0.96rem;
+    color: #666;
+}
+
+.image__title {
+    font-size: 3.6rem;
+}
+
+.image__title span {
+    
+}
+
+// ???????????
+// .image--single:nth-of-type(even) figure {
+//     text-align: right;
+// }
+
+.spacing, .ruler {
+    padding: 5px;
+}
+
+.spacing {
+    height: 50px;
+}
+
+.ruler hr {
+    margin: 5px 0;
+    border-width: 0;
+    border-bottom-width: 1px;
+    border-color: #999;
+    border-style: solid;
+}
+
+.align-right figure {
+    text-align: right;
+}
+
+figure img {
+    max-width: 100%;
 }
